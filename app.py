@@ -4,8 +4,8 @@ import pandas as pd
 app = Flask(__name__)
 
 # --- Đọc dữ liệu CSV ---
-df1 = pd.read_csv("questions_extracted_1_158.csv")
-df2 = pd.read_csv("questions_extracted_159_349.csv")
+df1 = pd.read_csv("questions_extracted_1_158_clean.csv")
+df2 = pd.read_csv("questions_extracted_159_349_clean.csv")
 df = pd.concat([df1, df2], ignore_index=True)
 
 # --- Giao diện HTML ---
@@ -85,3 +85,4 @@ if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
